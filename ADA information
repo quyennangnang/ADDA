@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ADA Information</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f9;
+        color: #333;
+    }
+    header {
+        background-color: #2c3e50;
+        color: white;
+        padding: 1rem;
+        text-align: center;
+    }
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+    .card {
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin: 1rem 0;
+        padding: 1.5rem;
+        text-align: center;
+    }
+    .card h2 {
+        margin-bottom: 1rem;
+    }
+    .price {
+        font-size: 2rem;
+        color: #27ae60;
+    }
+    footer {
+        background-color: #2f5b88;
+        color: white;
+        text-align: center;
+        padding: 1rem;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+    button {
+        background-color: #27ae60;
+        color: white;
+        border: none;
+        padding: 0.7rem 1.5rem;
+        cursor: pointer;
+        border-radius: 3px;
+        font-size: 1rem;
+    }
+    button:hover {
+        background-color: #1e8449;
+    }
+    .info {
+        margin: 2rem 0;
+        padding: 1rem;
+        background-color: #e9ecef;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+    }
+    .chart-container {
+        margin: 30px 0;
+    }
+    .chart-container canvas {
+        display: block;
+        margin: 0 auto;
+    }
+    .table-container {
+        overflow-x: auto;
+        margin: 30px 0;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 10px 0;
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    th, td {
+        padding: 15px;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+    }
+    th {
+        background: #2c3e50;
+        color: white;
+    }
+    td.price-up {
+        background-color: #27ae60;
+        color: white;
+        font-weight: bold;
+    }
+    td.price-down {
+        background-color: #e74c3c;
+        color: white;
+        font-weight: bold;
+    }
+    td.price-neutral {
+        background-color: #f1c40f;
+        color: white;
+        font-weight: bold;
+    }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<header>
+    <h1>ADA Information</h1>
+</header>
+<div class="container">
+    <div class="chart-container">
+        <canvas id="priceChart"></canvas>
+    </div>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Coin</th>
+                    <th>Price</th>
+                    <th>24h Change</th>
+                </tr>
+            </thead>
+            <tbody id="priceTable"></tbody>
+        </table>
+    </div>
+    <div class="info">
+        <h2>Cardano (ADA)</h2>
+        <p>Cardano (ADA) là một loại tiền điện tử triển khai giao thức Ouroboros (giao thức mới xây dựng trên mô hình PoS), đảm bảo tốc độ giao dịch cao và cơ hội kiếm phần thưởng công bằng.</p>
+        <p>Dự án được đồng sáng lập bởi Charles Hoskinson, một trong năm thành viên sáng lập ban đầu của Ethereum. Sau khi không đồng ý với hướng đi mà Ethereum đang đi, ông đã rời đi và sau đó góp phần tạo ra Cardano.</p>
+        <p>Nhóm phát triển đằng sau Cardano đã tạo ra blockchain của mình thông qua thử nghiệm và nghiên cứu sâu rộng. Nhà nghiên cứu dự án đã viết hơn 120 bài báo về công nghệ blockchain với nhiều chủ đề khác nhau.</p>
+        <p>Nhờ quy trình nghiêm ngặt này, Cardano nổi bật so với những loại tiền điện tử nổi bật khác. Cardano còn được mệnh danh là “sát thủ Ethereum” vì blockchain của nó được cho là có khả năng làm được nhiều điều hơn thế. Điều đó nói lên rằng, Cardano vẫn đang ở giai đoạn đầu, còn nhiều khả năng phát triển cùng với các ứng dụng DeFi.</p>
+        <p>Cardano đặt mục tiêu trở thành hệ điều hành tài chính thế giới bằng cách thiết lập các sản phẩm DeFi tương tự như Ethereum. Nhóm phát triển hy vọng sẽ cung cấp đa dạng giải pháp cho khả năng tương tác chuỗi, giảm thiểu gian lận cử tri và theo dõi hợp đồng pháp lý...</p>
+        
+        </head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tooltip Example</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="article">
+            <div class="featured">
+                <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcR_mUjsavIULCqQq75G54IQfcTVZHe7jL-S3juDZW-2xJIMlPseMBc41dMJtltWrTl4koPCdzGUqDTrONjbnw0m2A" alt="Charles Hoskinson" class="thumbnail">
+                <p><strong>Slayback's Charles Hoskinson</strong> is an American entrepreneur who is a co-founder of the blockchain engineering company Input Output Global, Inc. (formerly IOHK), and the Cardano blockchain platform,and was a co-founder of the Ethereum blockchain platform.</p>
+            </div>
+            <div class="tooltip">
+                <div class="tooltip-content">
+                    <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcR_mUjsavIULCqQq75G54IQfcTVZHe7jL-S3juDZW-2xJIMlPseMBc41dMJtltWrTl4koPCdzGUqDTrONjbnw0m2A" alt="Charles Hoskinson">
+                    <p><strong>Charles Hoskinson Slayback</strong> is an American entrepreneur who is a co-founder of the blockchain engineering company Input Output Global, Inc. (formerly IOHK), and the Cardano blockchain platform,and was a co-founder of the Ethereum blockchain platform.</p>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </div>
+</div>
+<footer>
+    <p>&copy; 2025 Doughweb. All Rights Reserved.</p>
+</footer>
+<script>
+const ctx = document.getElementById('priceChart').getContext('2d');
+const priceChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: [],
+        datasets: [
+            {
+                label: 'Cardano (ADA)',
+                data: [],
+                borderColor: '#ff6347',
+                backgroundColor: 'rgba(255, 99, 71, 0.2)',
+            }
+        ]
+    },
+    options: {
+        responsive: true,
+        scales: {
+            x: { title: { display: true, text: 'Time' } },
+            y: { title: { display: true, text: 'Price (USD)' } }
+        }
+    }
+});
+
+function updateTable(data) {
+    const tableBody = document.getElementById('priceTable');
+    tableBody.innerHTML = '';
+    data.forEach(coin => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${coin.name}</td>
+            <td class="${coin.change > 0 ? 'price-up' : coin.change < 0 ? 'price-down' : 'price-neutral'}">${coin.price}</td>
+            <td>${coin.change}%</td>
+        `;
+        tableBody.appendChild(row);
+    });
+}
+
+async function fetchCryptoData() {
+    try {
+        const response = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd');
+        const data = await response.json();
+        const filteredData = data.slice(0, 9).map(coin => ({
+            name: coin.name,
+            price: coin.current_price,
+            change: coin.price_change_percentage_24h
+        }));
+        updateTable(filteredData);
+        priceChart.data.labels.push(new Date().toLocaleTimeString());
+        priceChart.data.datasets[0].data.push(filteredData.find(coin => coin.name === 'Cardano').price);
+        priceChart.update();
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+}
+
+setInterval(fetchCryptoData, 60000);
+fetchCryptoData();
+
+</script>
+</body>
+</html>
